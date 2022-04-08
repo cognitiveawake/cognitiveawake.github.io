@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>《Web前端开发技术》实验6（html5）</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h2>实验六: HTML 5</h2>
+<h3>一、实验目的</h3>
+<ol>
+<li>掌握HTML 5的开发环境及运行环境</li>
+<li>掌握HTML 5对传统表单功能的扩充</li>
+<li>掌握HTML 5的图形功能</li>
+<li>掌握HTML 5的地理定位功能</li>
+</ol>
+<h3>二、实验内容及步骤</h3>
+<p><strong>1. HTML 5开发及运行环境</strong></p>
+<p>在DW CS6中使用菜单“编辑——首先参数”进行设置，如下图：</p>
+<p><img src="https://i.imgur.com/pg0ygdu.png" /></p>
+<ul>
+<li>注意：HTML 5之前建立的文档的默认类型是HTML 4。</li>
+<li>HTML 5文档的首行是：<code>&lt;!doctype html&gt;</code></li>
+<li>使用IE 9及以上版本浏览器或360浏览器或Google浏览器等</li>
+</ul>
+<p><strong>2. HTML 5的表单新特性</strong><br/></p>
+<p>浏览效果：</p>
+<p><img src="https://i.imgur.com/sxp3f4L.png" /></p>
+<p>源代码：</p>
+<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;HTML 5新特性之一:表单字段验证&lt;/title&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-latest.js&quot;&gt;&lt;/script&gt; &lt;!--引用jquery官方的地址--&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;form&gt;
+        会员名：&lt;input type=&quot;text&quot; required id=&quot;memname&quot;&gt;&lt;br&gt;&lt;!--必填写--&gt;
+        E_mail：&lt;input type=&quot;email&quot; id=&quot;email&quot;&gt;&lt;br&gt;&lt;!--验证电子邮件地址格式--&gt;
+        生 日：&lt;input type=&quot;date&quot; name=&quot;user_date&quot; id=&quot;birthday&quot;/&gt;&lt;br&gt;&lt;!--日期选择器--&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;提交&quot; id=&quot;tj&quot;&gt;  &lt;!--实际项目中，表单提交应当是submit类型的按钮--&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+&lt;script&gt;
+    $(document).ready(function(){  //定义客户端脚本
+        $(&quot;#tj&quot;).click(function(){
+            var memname=$(&quot;#memname&quot;);
+            var email=$(&quot;#email&quot;);
+            var birthday=$(&quot;#birthday&quot;);
+            alert(memname.val()+&quot; &quot;+email.val()+&quot; &quot;+birthday.val());
+        });
+    });
+&lt;/script&gt;
+</code></pre>
+
+<ul>
+<li>对文本字段增加了关键字requried</li>
+<li>增加了电子邮件字段类型email</li>
+<li>增加了日期选择器字段date（要求使用Webkit内核的浏览器）</li>
+</ul>
+<p><strong>3. HTML 5的绘图功能</strong></p>
+<p>绘图效果：</p>
+<p><img src="https://i.imgur.com/sBbxefv.png" /></p>
+<p>源代码：</p>
+<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;无标题文档&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+        &lt;canvas width=&quot;500&quot; height=&quot;800&quot; style=&quot;background:yellow&quot;  id=&quot;canvas&quot;&gt;
+            您的浏览器当前版本不支持canvas标签
+        &lt;/canvas&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;script&gt;
+    var canvas=document.getElementById('canvas');  //获取画布DOM
+    var cxt=canvas.getContext('2d');    //设置绘图上下文对象
+    //console.log(ctx);  // 测试  
+    //画一条线段
+        cxt.lineWidth=5;  //线宽
+        cxt.strokeStyle=&quot;#ff9900&quot;;  //画笔颜色
+        cxt.moveTo(20,20); //笔触位置（开始点）
+        cxt.lineTo(300,20);//触位置（终点）
+        cxt.stroke(); //调用stroke()后才会真正作用于画布
+
+    //画圆形
+        cxt.beginPath(); //关键，先开始路径
+        cxt.lineWidth=3;
+        cxt.strokeStyle=&quot;green&quot;; //设置绘画的颜色
+        cxt.arc(70,100,50,0,360,false); 
+        cxt.stroke(); //必须
+        cxt.closePath(); // 后结束路径
+
+        cxt.beginPath();
+        cxt.fillStyle=&quot;rgb(255,0,0)&quot;;  //设置填充的颜色
+        cxt.arc(200,100,50,0,360,false);
+        cxt.fill();  //填充
+        cxt.stroke(); //可去，因为前面使用了fill()方法
+        cxt.closePath();
+
+    //画矩形
+        cxt.beginPath();
+        cxt.rect(20,200,100,100);
+        cxt.stroke(); //rect()方法是单纯的画出一个矩形框，调用stroke()或 fill()后才会真正作用于画布
+        cxt.closePath();
+        //cxt.strokeRect(20,220,100,100) //另法
+
+        //实心矩形
+        /*cxt.beginPath();
+        cxt.rect(150,220,100,100);
+        cxt.fill();  //填充
+        cxt.closePath();*/
+        cxt.fillRect(150,200,100,100);  //另法
+
+    //文字与图像
+        cxt.font=&quot;40px 宋体&quot;;
+        cxt.fillText(&quot;把一幅图像加载到画布中&quot;,20,370);
+        cxt.lineWidth=1;
+        cxt.strokeText(&quot;Webkit内核的浏览器不支持&quot;,20,420);
+        var img =new Image();
+        img.src=&quot;littleCat.jpg&quot;;
+        cxt.drawImage(img,20,450,230,306);
+&lt;/script&gt;
+</code></pre>
+
+<p><strong>4. HTML 5的地理定位</strong><br/></p>
+<p><img src="https://i.imgur.com/cVMRWry.png" /></p>
+<p>源代码：</p>
+<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+    &lt;meta name=&quot;keywords&quot; content=&quot;百度地图,百度地图API，百度地图自定义工具，百度地图所见即所得工具&quot; /&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;百度地图API自定义地图，帮助用户在可视化操作下生成百度地图&quot; /&gt;
+    &lt;title&gt;百度地图API自定义地图&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        html,body {
+            margin: 0;
+            padding: 0;
+        }
+        .iw_poi_title {
+            color: #CC5522;
+            font-size: 14px;
+            font-weight: bold;
+            overflow: hidden;
+            padding-right: 13px;
+            white-space: nowrap
+        }
+        .iw_poi_content {  
+            font: 12px arial, sans-serif;
+            overflow: visible;
+            padding-top: 4px;
+            white-space: -moz-pre-wrap;
+            word-wrap: break-word
+        }
+    &lt;/style&gt;
+    &lt;!--引用百度地图API--&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;http://api.map.baidu.com/api?key=&amp;v=1.1&amp;services=true&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;!--百度地图容器--&gt;
+    &lt;div style=&quot;width:697px;height:550px;border:#ccc solid 1px;&quot; id=&quot;dituContent&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+    //标注点数组用到经纬度数据，可访问http://api.map.baidu.com/lbsapi/getpoint/index.html获取
+    var markerArr = [{ title: &quot;武汉科技大学黄家湖校区&quot;, 
+    content: &quot;联系人：吴志祥&lt;br/&gt;电话：15527643858&lt;br/&gt;QQ：707348355&quot;, 
+    point: &quot;114.271657|30.446276&quot;, isOpen: 0, icon: { w: 21, h: 21, l: 0, t: 0, x: 6, lb: 5 } }];
+    initMap(); //初始化地图
+
+    function initMap() {  //初始化地图函数
+    createMap();//创建地图
+    setMapEvent();//设置地图事件
+    addMapControl();//向地图添加控件
+    addMarker();//向地图中添加标记marker
+    }
+
+    function createMap() {  //创建地图函数
+    var map = new BMap.Map(&quot;dituContent&quot;);//在百度地图容器中创建一个地图
+    var point = new BMap.Point(114.271657, 30.446276);//定义一个中心点坐标
+    map.centerAndZoom(point, 16);//设定地图的中心点和坐标并将地图显示在地图容器中
+    window.map = map;//将map变量存储在全局
+    }
+
+    function setMapEvent() {  //地图事件设置函数
+    map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+    map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+    map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+    map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+
+    function addMapControl() {  //地图控件添加函数
+        //向地图中添加缩放控件
+        var ctrl_nav = new BMap.NavigationControl({ anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE });
+        map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+        var ctrl_ove = new BMap.OverviewMapControl({ anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: 1 });
+        map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+        var ctrl_sca = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_BOTTOM_LEFT });
+        map.addControl(ctrl_sca);
+    }
+
+    function addMarker() {  //创建marker
+        for (var i = 0; i &lt; markerArr.length; i++) {
+            var json = markerArr[i];
+            var p0 = json.point.split(&quot;|&quot;)[0];
+            var p1 = json.point.split(&quot;|&quot;)[1];
+            var point = new BMap.Point(p0, p1);
+            var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point, { icon: iconImg });
+            var iw = createInfoWindow(i);
+            var label = new BMap.Label(json.title, { &quot;offset&quot;: new BMap.Size(json.icon.lb - json.icon.x + 10, -20) });
+            marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+            borderColor: &quot;#808080&quot;,
+            color: &quot;#333&quot;,
+            cursor: &quot;pointer&quot;
+            });
+
+            (function () {
+                var index = i;
+                var _iw = createInfoWindow(i);
+                var _marker = marker;
+                _marker.addEventListener(&quot;click&quot;, function () {
+                this.openInfoWindow(_iw);
+                });
+                _iw.addEventListener(&quot;open&quot;, function () {
+                _marker.getLabel().hide();
+                })
+                _iw.addEventListener(&quot;close&quot;, function () {
+                _marker.getLabel().show();
+                })
+                label.addEventListener(&quot;click&quot;, function () {
+                _marker.openInfoWindow(_iw);
+                })
+                if (!!json.isOpen) {
+                label.hide();
+                _marker.openInfoWindow(_iw);
+            }
+          })()
+        }
+    }
+
+    function createInfoWindow(i) {  //创建InfoWindow
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow(&quot;&lt;b class='iw_poi_title' title='&quot; + json.title + &quot;'&gt;&quot; + 
+        json.title + &quot;&lt;/b&gt;&lt;div class='iw_poi_content'&gt;&quot; + json.content + &quot;&lt;/div&gt;&quot;);
+        return iw;
+    }
+
+    function createIcon(json) {  //创建一个Icon
+        var icon = new BMap.Icon(&quot;http://app.baidu.com/map/images/us_mk_icon.png&quot;, 
+        new BMap.Size(json.w, json.h), 
+        { imageOffset: new BMap.Size(-json.l, -json.t), 
+        infoWindowOffset: new BMap.Size(json.lb + 5, 1), offset: new BMap.Size(json.x, json.h) })
+        return icon;
+    }
+&lt;/script&gt;
+</code></pre>
+
+<ul>
+<li>使用Google定位属于原生开发，第三方（如百度）提供的地图应用是对原生开发的再封装</li>
+<li>百度地图应用JavaScript API自1.5版本起，需要注册百度开发者帐号，申请应用密钥（AK），本例是先前版本</li>
+<li>标注点数组用到经纬度数据，可访问http://api.map.baidu.com/lbsapi/getpoint/index.html获取</li>
+</ul>
+<p>下面是使用JavaScript API 2.0并注册、申请AK得到的卫星地图
+<img src="https://i.imgur.com/ZZH7C3B.png" /></p>
+<p>文件（jss程序）代码更加简洁</p>
+<pre><code>&lt;!DOCTYPE html&gt;  
+&lt;html&gt;  
+&lt;head&gt;  
+    &lt;meta charset=&quot;UTF-8&quot;/&gt;  
+    &lt;script type=&quot;text/javascript&quot; src=&quot;http://api.map.baidu.com/api?v=2.0&amp;ak=vR5fEb9FMoWCzxNgtEouKM9qoH2Fs8kv&quot;&gt;  
+    &lt;/script&gt;  
+    &lt;style&gt;  
+        #container{  
+            width: 800px;  
+            height: 500px;  
+        }  
+    &lt;/style&gt;  
+&lt;/head&gt;  
+
+&lt;body&gt;  
+    &lt;h1&gt;使用百度地图&lt;/h1&gt;  
+    &lt;div id=&quot;container&quot;&gt;&lt;/div&gt;  
+&lt;/body&gt;  
+&lt;/html&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;      
+    var map = new BMap.Map(&quot;container&quot;);  // 创建地图实例，避免与Map重名，所以使用BMap.Map
+
+    //var point = new BMap.Point(113.946317,22.549008);  // 创建点坐标
+    var point = new BMap.Point(114.271657,30.446276);  //武汉科技大学黄家湖校区
+
+    map.centerAndZoom(point, 18);  // 初始化地图，设置中心点坐标和地图级别 1~18级 
+
+    map.enableScrollWheelZoom(true);  //鼠标滚动，地图缩放 
+
+    //添加地图控件  
+    map.addControl(new BMap.NavigationControl());  
+    map.addControl(new BMap.OverviewMapControl());  
+    map.addControl(new BMap.ScaleControl());  
+    map.addControl(new BMap.MapTypeControl());  
+
+    var marker=map.addOverlay(new BMap.Marker(point));  //添加地图标注 
+&lt;/script&gt;  
+</code></pre>
+
+<h3>三、实验小结</h3>
+<ul>
+<li>HTML 5不再使用DTD校验</li>
+<li>HTML 5绘图时，在body部分使用canvas标签，js脚本部分使用Canvas API</li>
+<li>HTML 5地理定位功能是很实用的，有Web和移动两个方面</li>
+</ul>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

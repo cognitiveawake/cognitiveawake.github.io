@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>《Web前端开发技术》实验5（JS）</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h2>实验五：客户端脚本及应用</h2>
+<h3>一、实验目的</h3>
+<ol>
+<li>掌握JavaScript脚本语言的特点</li>
+<li>掌握JS内置对象（Array、Date）与浏览器对象（window、document和location）的使用</li>
+<li>掌握内联式脚本、内部脚本和外部脚本的使用</li>
+<li>掌握JS脚本库jQuery的使用</li>
+<li>掌握第三方脚本的使用</li>
+<li>掌握JS数组（含二维数组）的定义与使用</li>
+</ol>
+<h3>二、实验内容及步骤</h3>
+<h4>1. 内联式脚本、内部脚本和外部脚本的使用</h4>
+<pre><code> &lt;a href=&quot;index.html&quot; onclick=&quot;return confirm('确实要退出会员登录吗？')&quot;&gt;会员登出&lt;/a&gt;
+</code></pre>
+
+<ul>
+<li>事件响应可以一个已经定义了的脚本方法，也可以是若干行脚本命令（以分号分隔）还可以是注册事件的方式。</li>
+<li>上面是内联式脚本用法；下面是内部脚本和外部脚本的用法。</li>
+<li>内部脚本和外部脚本都使用成对标签script定义。其中，后者需要使用src属性。</li>
+</ul>
+<h4>2. 使用jQuery，以交互方式浏览一组图片</h4>
+<img src="https://i.imgur.com/fjIxJYN.png" /><p><br/></p></p>
+<blockquote>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;以交互方式显示一组图片&lt;/title&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-1.3.2.js&quot;&gt;&lt;/script&gt;
+        &lt;!--样式定义略--&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;big&quot;&gt;
+            &lt;div class=&quot;row1&quot;&gt;&lt;img src=&quot;images/p1.jpg&quot; width=&quot;300&quot; height=&quot;170&quot; name=&quot;tpk&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;row2&quot;&gt;
+                &lt;input type=&quot;button&quot; value=&quot;上一幅&quot; id=&quot;rf&quot;&gt;
+                共有&lt;span id=&quot;msg1&quot;&gt;&lt;/span&gt;幅&amp;nbsp;&amp;nbsp;当前序号：&lt;span id=&quot;msg2&quot;&gt;&lt;/span&gt;
+                &lt;input type=&quot;button&quot; value=&quot;下一幅&quot; id=&quot;ff&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;script&gt;
+        $(document).ready(function(){
+            var tp=new Array(5);tp[0]=&quot;images/p1.jpg&quot;;
+            tp[1]=&quot;images/p2.jpg&quot;;tp[2]=&quot;images/p3.jpg&quot;;tp[3]=&quot;images/p4.jpg&quot;;tp[4]=&quot;images/p5.jpg&quot;;
+            var next=$(&quot;#ff&quot;); //通过id样式获取按钮对象
+            var last=$(&quot;#rf&quot;); 
+            var index=0;  
+            $(&quot;#msg1&quot;). html (tp.length); //设置指定位置的文本
+            setButtonState();
+            function setButtonState(){  //定义状态函数（方法）
+                index==0?last.css(&quot;display&quot;, &quot;none&quot;):last.css(&quot;display&quot;,&quot;inline&quot;);  
+                index==tp.length?next.css(&quot;display&quot;, &quot;none&quot;):next.css(&quot;display&quot;,&quot;inline&quot;); 
+                $(&quot;#msg2&quot;).html(index+1);
+        }
+            next.click(function(){
+                index++;
+                tpk.src=tp[index];          
+                setButtonState();  //调用函数更新状态
+            });
+            last.click(function(){
+                index--;
+                tpk.src=tp[index];
+                setButtonState();
+            });
+    });
+    &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+
+</blockquote>
+<h4>3. jQuery处理表单元素——会员注册页面</h4>
+<p><img src="https://i.imgur.com/IaQcIAh.png" /></p>
+<p>页面的客户端脚本（JS代码）：</p>
+<pre><code>&lt;script&gt;
+    //客户端脚本，window对象的定时器方法
+    //window.setInterval(&quot;document.getElementById('dtps').innerText=new Date().toLocaleString()&quot;,1000);
+    var dtps = $(&quot;#dtps&quot;);  //转换为jQuery对象
+    setInterval(&quot;dtps.text(new Date().toLocaleString())&quot;);  //“window.”可省略；第一参数需要加双引号；第二参数可省略
+&lt;/script&gt;
+
+&lt;script&gt;
+    $(document).ready(function () {
+        $(&quot;#city&quot;).append(&quot;&lt;option value='1'&gt;北京&lt;/option&gt;&quot;);
+        $(&quot;#city&quot;).append(&quot;&lt;option value='2'&gt;上海&lt;/option&gt;&quot;);
+        $(&quot;#city&quot;).append(&quot;&lt;option value='3'&gt;武汉&lt;/option&gt;&quot;);
+
+        $(&quot;#ensure&quot;).click(function () {
+            result=&quot;亲爱的&quot;+$(&quot;#username&quot;).val();
+            if($('input:radio:checked').val()==&quot;1&quot;){
+                result+=&quot;先生：&quot;;
+            }else{
+                result+=&quot;女士：&quot;;
+            }
+
+            ah=&quot;&quot;;
+            $('input:checkbox').each(function(){  //遍历复选框
+                if($(this).attr('checked')){
+                    ah+=$(this).val();
+                }
+            });
+            if(ah.length&gt;0){
+                result+=&quot;你的爱好是&quot;+ah+&quot;；&quot;;
+            }else{
+                result+=&quot;你没有选择爱好；&quot;;
+            }
+
+            var obj=$(&quot;#city option:selected&quot;);
+            result+=&quot;你选择的城市是&quot;+obj.text()+&quot;(代码为&quot;+obj.val()+&quot;)&quot;;
+            alert(result);
+        });
+
+        $(&quot;#cancel&quot;).click(function () {  //响应取消按钮
+            location.href = &quot;index.html&quot;;   //页面跳转
+        });
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h4>4. jQuery处理表单元素——会员登录页面</h4>
+<p><img src="https://i.imgur.com/gI36N5n.png" /><p></p>
+<p>页面的客户端脚本（JS代码）：</p>
+<pre><code>&lt;script&gt;
+    $(document).ready(function () {
+        var users = [[&quot;wzx&quot;, &quot;123&quot;], [&quot;wyh&quot;, &quot;456&quot;]];  //二维数组即是数组中的每个元素是一个数组，初始化2个用户
+        users.push([&quot;wj&quot;, &quot;789&quot;]);  //追加一个用户信息
+
+        $(&quot;#ensure&quot;).click(function () {
+            un = $(&quot;#username&quot;).val(); //获取文本框的输入值
+            pwd = $(&quot;#password&quot;).val();  //获取密码框的输入值
+            for (i = 0; i &lt; users.length; i++) {
+                if (users[i][0] == un) break;
+            }
+            if (i &lt; users.length) {
+                if (users[i][1] == pwd) {  //登录成功
+                    alert(&quot;登录成功！&quot;);
+                    $(&quot;#state&quot;).html(&quot;欢迎你：&quot; + un);  //局部刷新
+                    $(&quot;table&quot;).hide(&quot;slow&quot;);  //隐藏表格
+                } else {
+                    alert(&quot;密码错误...&quot;);
+                }
+            } else {
+                alert(&quot;用户名不存在...&quot;);
+            }
+        });
+
+        $(&quot;#cancel&quot;).click(function () {  //响应取消按钮
+            location.href = &quot;index.html&quot;;
+        });
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h4>代码要点如下：</h4>
+<ul>
+<li>一维数组初始化时使用一对中括号</li>
+<li>数组对象使用push()方法来添加元素</li>
+<li>jQuery对象具有隐藏方法hide()</li>
+<li>遍历jQuery对象（元素）集的方法each()</li>
+<li>使用浏览器二级对象的方法实现页面跳转 location.href</li>
+<li>使用jQuery对象的html()方法实现页面局部刷新</li>
+</ul>
+<h3>三、实验小结</h3>
+<ul>
+<li>jQuery较原生JS而言，有哪些优点？jQuery处理表单元素的相关方法有哪些？</li>
+<li>二维数组是指数组的元素本身都是一维数组，JS数组的创建与C语言数组的创建是不同的（强弱类型）。</li>
+<li>设计过程中，应用基于对象的编程思想。</li>
+<li>JS实现页面动态跳转的方式。</li>
+</ul>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

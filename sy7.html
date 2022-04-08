@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>《Web前端开发技术》实验7（常用Web开发框架）</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h2>实验七: 其它常用Web开发框架</h2>
+<h3>一、实验目的</h3>
+<ol>
+<li>掌握Bootstrap框架的使用；</li>
+<li>掌握Web前端框架Layui的使用；</li>
+<li>掌握百度富文本编辑器Baidu UE的使用；</li>
+<li>掌握Node.js、Express和Vue.js的使用初步。</li>
+</ol>
+<h3>二、实验内容及步骤</h3>
+<p><strong>1. Bootstrap的使用</strong></p>
+<p><strong><em>1.1 使用Bootstrap美化表格、增加特效</em></strong></p>
+<p>示例效果如下：</p>
+<p><img src="https://i.imgur.com/4e8zf0G.png" /></p>
+<p>代码如下：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;script src=&quot;http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;http://cdn.bootcss.com/twitter-bootstrap/2.2.2/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+    &lt;link href=&quot;http://cdn.bootcss.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;title&gt;使用Bootstrap美化表格、增加特效&lt;/title&gt;
+    &lt;style&gt;
+        th{
+            text-align: center!important;/*水平居中表格标题栏文本必须提升样式优先级*/
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;table class=&quot;table table-bordered table-striped table-hover table-condensed&quot;&gt;
+        &lt;caption&gt;通讯录&lt;/caption&gt;
+        &lt;tr&gt;&lt;th&gt;用户名&lt;/th&gt;&lt;th&gt;工作单位&lt;/th&gt;&lt;th&gt;手机&lt;/th&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;wuzhixiang&lt;/td&gt;&lt;td&gt;武科大计算机学院&lt;/td&gt;&lt;td&gt;155****3858&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;kepeng&lt;/td&gt;&lt;td&gt;武科大计算机学院&lt;/td&gt;&lt;td&gt;137****0063&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;wngyanhong&lt;/td&gt;&lt;td&gt;武科大管理学院&lt;/td&gt;&lt;td&gt;135****6895&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;wangjing&lt;/td&gt;&lt;td&gt;武科大管理学院&lt;/td&gt;&lt;td&gt;156****1382&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<ul>
+<li>本例对Bootstrap框架采取远程引用，实际上可以下载到项目里变成站内引用</li>
+<li>表格基本样式table、边框样式table-bordered、有条纹的背景色样式table-striped（隔行变色）</li>
+<li>鼠标悬停样式table-hover、表格紧凑样式table-condensed</li>
+<li>手机等移动设备优先、响应式布局（缩放窗口时表格仍保持原来的比例）</li>
+<li>访问官网http://www.bootcss.com，可查询详细用法</li>
+</ul>
+<p><strong><em>1.2 使用Bootstrap美化表单（元素）</em></strong></p>
+<p><img src="https://i.imgur.com/Otd2I83.png" /></p>
+<p>代码如下：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt; 
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Bootstrap之表单&lt;/title&gt;
+    &lt;script src=&quot;http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;http://cdn.bootcss.com/twitter-bootstrap/2.2.2/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+    &lt;link href=&quot;http://cdn.bootcss.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;/head&gt;   
+&lt;body&gt;
+    &lt;form class=&quot;form-horizontal&quot;&gt;
+        &lt;div class=&quot;control-group&quot;&gt;
+            &lt;label class=&quot;control-label&quot; for=&quot;inputEmail&quot;&gt;Email&lt;/label&gt;
+            &lt;div class=&quot;controls&quot;&gt;
+                &lt;input type=&quot;text&quot; id=&quot;inputEmail&quot; placeholder=&quot;请输入Email地址&quot; class=&quot;span3&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;control-group&quot;&gt;
+            &lt;label class=&quot;control-label&quot; for=&quot;inputPassword&quot;&gt;Password&lt;/label&gt;
+            &lt;div class=&quot;controls&quot;&gt;
+                &lt;input type=&quot;password&quot; id=&quot;inputPassword&quot; placeholder=&quot;Password&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;control-group&quot;&gt;
+            &lt;div class=&quot;controls&quot;&gt;
+                &lt;label class=&quot;checkbox&quot;&gt;
+                    &lt;input type=&quot;checkbox&quot;&gt; Remember me&lt;/label&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn&quot;  id=&quot;tj&quot;&gt;提交&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<ul>
+<li>Bootstrap默认的栅格系统为12列 ，形成一个940px宽的容器，分别用类样式span1、span2…和span12表示，使用这些类样式来控制文本框的宽度（以span3作为默认值）。</li>
+<li>表单输入元素与说明文本所使用的label标签包含在一个应用了类样式control-group的div里，自动对齐</li>
+<li>使用成对的button标签制作的按钮更美观</li>
+</ul>
+<p><strong><em>1.3 使用Bootstrap制作导航条</em></strong></p>
+<p><img src="https://i.imgur.com/Ja1dNvg.png" /></p>
+<p>源代码如下：</p>
+<pre><code>&lt;!doctype&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Bootstrap用法：制作面包屑导航&lt;/title&gt;
+    &lt;meta charset=&quot;utf-8&quot;/&gt;
+    &lt;script src=&quot;http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js&quot;&gt;&lt;/script&gt;       
+    &lt;script src=&quot;http://cdn.bootcss.com/twitter-bootstrap/2.2.2/bootstrap.min.js&quot;&gt;&lt;/script&gt;     
+    &lt;link href=&quot;http://cdn.bootcss.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    你当前所的位置：
+    &lt;ul class=&quot;breadcrumb&quot; style=&quot;display:inline; line-height:40px&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;首页&lt;/a&gt; &lt;span class=&quot;divider&quot;&gt;&gt;&lt;/span&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Library&lt;/a&gt; &lt;span class=&quot;divider&quot;&gt;&gt;&lt;/span&gt;&lt;/li&gt;
+        &lt;li class=&quot;active&quot;&gt;Data&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div style=&quot;background-color:rgb(248, 236, 236)&quot;&gt;制作要点：&lt;br/&gt;
+        1. 定义当前页的父页面的超链接和分隔符，并放入列表项里 &lt;br&gt;
+        2. 对分隔符应用类样式divider &lt;br&gt;
+        3. 最后一个列表表示当前页，并对li应用类样式active&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p><strong>2. 模块化框架Layui的使用</strong><br/></p>
+<p><strong><em>2.1 Layui框架的两种使用方式、使用layer模块做快显信息</em></strong></p>
+<p>快速信息与普通的警告信息不同，它在短暂停留后自动消失，浏览效果如下：</p>
+<p><img src="https://i.imgur.com/VuWIncS.png" /></p>
+<p>源代码如下：</p>
+<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;使用Layui之layer模块做快显信息&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;layui/css/layui.css&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;!--script src=&quot;layui/layui.all.js&quot;&gt;&lt;/script--&gt;  &lt;!--非模块化方式--&gt;
+&lt;script src=&quot;layui/layui.js&quot;&gt;&lt;/script&gt;  &lt;!--模块化方式--&gt;
+&lt;script&gt;
+    layui.use(['layer', 'form'], function () {  //模块化方式下，加载相关模块 
+        var layer = layui.layer  //创建实例对象
+            , form = layui.form;
+        layer.msg('Hello Everyone'); //通过实例对象使用类方法，快显消息（稍后自动消失）
+    });
+    //layui.layer.msg('Hello Mr. Wu'); 
+&lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+
+<ul>
+<li>Layui框架对应于项目根目录下的文件夹layui</li>
+<li>需要分别引入Layui的css文件和js文件</li>
+<li>加载脚本文件layui.all.js对应于非模块化方式（此时所有模块都一次性加载），而加载layui.js对应于模块化方式</li>
+<li>本例js脚本只使用了layer模块，虽然也加载了form模块，但未使用</li>
+</ul>
+<p><strong><em>2.2 表格模块</em></strong></p>
+<p>表格模块不仅能显示二维表数据，还提供了分页功能，浏览效果如下：</p>
+<p><img src="https://i.imgur.com/WDbaqt9.png" /></p>
+<p>源代码：</p>
+<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Layui之table组件之分页功能&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;layui/css/layui.css&quot; media=&quot;all&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;table class=&quot;layui-hide&quot; id=&quot;table_demo&quot;&gt;&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;script src=&quot;layui/layui.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+layui.use('table', function () {  //加载表格模块table
+    var table = layui.table;
+    table.render({  //展示已知数据
+        elem: '#table_demo'
+        , cols: [[ //表格标题栏含有7个字段
+            { field: 'id', title: 'ID', width: 80, sort: true }
+            , { field: 'username', title: '用户名', width: 120 }
+            , { field: 'email', title: '邮箱', Width: 180 }
+            , { field: 'sign', title: '签名', Width: 80 }
+            , { field: 'sex', title: '性别', width: 80 }
+            , { field: 'city', title: '城市', width: 100 }
+            , { field: 'experience', title: '积分', width: 80, sort: true }
+        ]]
+        , data: [{  //数据记录使用一维数组来表示；数组元素由若干json格式的键值对组成（{}内含有10个字段，含有表格标题的全部字段）
+            &quot;id&quot;: &quot;10001&quot;
+            , &quot;username&quot;: &quot;杜甫&quot;
+            , &quot;email&quot;: &quot;xianxin@layui.com&quot;
+            , &quot;sex&quot;: &quot;男&quot;
+            , &quot;city&quot;: &quot;浙江杭州&quot;
+            , &quot;sign&quot;: &quot;人生恰似一场修行&quot;
+            , &quot;experience&quot;: &quot;116&quot;
+            , &quot;ip&quot;: &quot;192.168.0.8&quot;
+            , &quot;logins&quot;: &quot;108&quot;
+            , &quot;joinTime&quot;: &quot;2016-10-14&quot;
+        }, {
+            &quot;id&quot;: &quot;10002&quot;
+            , &quot;username&quot;: &quot;李白&quot;
+            , &quot;email&quot;: &quot;xianxin@layui.com&quot;
+            , &quot;sex&quot;: &quot;男&quot;
+            , &quot;city&quot;: &quot;浙江杭州&quot;
+            , &quot;sign&quot;: &quot;人生恰似一场修行&quot;
+            , &quot;experience&quot;: &quot;12&quot;
+            , &quot;ip&quot;: &quot;192.168.0.9&quot;
+            , &quot;logins&quot;: &quot;106&quot;
+            , &quot;joinTime&quot;: &quot;2016-10-14&quot;
+            , &quot;LAY_CHECKED&quot;: true
+        }, {
+            &quot;id&quot;: &quot;10003&quot;
+            , &quot;username&quot;: &quot;王勃&quot;
+            , &quot;email&quot;: &quot;xianxin@layui.com&quot;
+            , &quot;sex&quot;: &quot;男&quot;
+            , &quot;city&quot;: &quot;浙江杭州&quot;
+            , &quot;sign&quot;: &quot;人生恰似一场修行&quot;
+            , &quot;experience&quot;: &quot;65&quot;
+            , &quot;ip&quot;: &quot;192.168.0.7&quot;
+            , &quot;logins&quot;: &quot;106&quot;
+            , &quot;joinTime&quot;: &quot;2016-10-14&quot;
+        }, {
+            &quot;id&quot;: &quot;10004&quot;
+            , &quot;username&quot;: &quot;贤心&quot;
+            , &quot;email&quot;: &quot;xianxin@layui.com&quot;
+            , &quot;sex&quot;: &quot;男&quot;
+            , &quot;city&quot;: &quot;浙江杭州&quot;
+            , &quot;sign&quot;: &quot;人生恰似一场修行&quot;
+            , &quot;experience&quot;: &quot;666&quot;
+            , &quot;ip&quot;: &quot;192.168.0.6&quot;
+            , &quot;logins&quot;: &quot;106&quot;
+            , &quot;joinTime&quot;: &quot;2016-10-14&quot;
+        }, {
+            &quot;id&quot;: &quot;10005&quot;
+            , &quot;username&quot;: &quot;贤心&quot;
+            , &quot;email&quot;: &quot;xianxin@layui.com&quot;
+            , &quot;sex&quot;: &quot;男&quot;
+            , &quot;city&quot;: &quot;浙江杭州&quot;
+            , &quot;sign&quot;: &quot;人生恰似一场修行&quot;
+            , &quot;experience&quot;: &quot;86&quot;
+            , &quot;ip&quot;: &quot;192.168.0.5&quot;
+            , &quot;logins&quot;: &quot;106&quot;
+            , &quot;joinTime&quot;: &quot;2016-10-14&quot;
+        }, {
+            &quot;id&quot;: &quot;10006&quot;
+            , &quot;username&quot;: &quot;贤心&quot;
+            , &quot;email&quot;: &quot;xianxin@layui.com&quot;
+            , &quot;sex&quot;: &quot;男&quot;
+            , &quot;city&quot;: &quot;浙江杭州&quot;
+            , &quot;sign&quot;: &quot;人生恰似一场修行&quot;
+            , &quot;experience&quot;: &quot;12&quot;
+            , &quot;ip&quot;: &quot;192.168.0.4&quot;
+            , &quot;logins&quot;: &quot;106&quot;
+            , &quot;joinTime&quot;: &quot;2016-10-14&quot;
+        }, {
+            &quot;id&quot;: &quot;10007&quot;
+            , &quot;username&quot;: &quot;贤心&quot;
+            , &quot;email&quot;: &quot;xianxin@layui.com&quot;
+            , &quot;sex&quot;: &quot;男&quot;
+            , &quot;city&quot;: &quot;浙江杭州&quot;
+            , &quot;sign&quot;: &quot;人生恰似一场修行&quot;
+            , &quot;experience&quot;: &quot;16&quot;
+            , &quot;ip&quot;: &quot;192.168.0.3&quot;
+            , &quot;logins&quot;: &quot;106&quot;
+            , &quot;joinTime&quot;: &quot;2016-10-14&quot;
+        }, {
+            &quot;id&quot;: &quot;10008&quot;
+            , &quot;username&quot;: &quot;贤心&quot;
+            , &quot;email&quot;: &quot;xianxin@layui.com&quot;
+            , &quot;sex&quot;: &quot;男&quot;
+            , &quot;city&quot;: &quot;浙江杭州&quot;
+            , &quot;sign&quot;: &quot;人生恰似一场修行&quot;
+            , &quot;experience&quot;: &quot;106&quot;
+            , &quot;ip&quot;: &quot;192.168.0.2&quot;
+            , &quot;logins&quot;: &quot;106&quot;
+            , &quot;joinTime&quot;: &quot;2016-10-14&quot;
+        }]
+        ,page: true //是否显示分页
+        ,limit: 5 //每页显示的数量
+    });
+});
+&lt;/script&gt;
+</code></pre>
+
+<ul>
+<li>表格标题的定义里，包含了是否允许记录排序</li>
+<li>数据记录使用一维数组来表示，其数组元素为json格式</li>
+<li>分页设置作为table对象的rendder()方法的参数</li>
+</ul>
+<p><strong><em>2.3 分页模块laypage</em></strong></p>
+<p>分页浏览效果如下：</p>
+<p><img src="https://i.imgur.com/WW5LeP0.png" /></p>
+<p>源代码如下：</p>
+<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Layui框架之分页组件&lt;/title&gt;
+    &lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;layui/css/layui.css&quot; media=&quot;all&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;ul id=&quot;city_list&quot;&gt;&lt;/ul&gt;
+    &lt;div id=&quot;nav&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;script src=&quot;layui/layui.all.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+var data = [&quot;北京&quot;,'上海','广州','深圳','杭州','长沙','合肥','宁夏','成都','西安','南昌','上饶','沈阳','济南','厦门','福州','九江','宜春',
+            '赣州','宁波','绍兴','无锡','苏州','徐州','东莞','佛山','中山','成都','武汉','青岛','天津','重庆','南京','香港','澳门','台北'
+];  //使用一个字符数组作为分页测试数据。其中，单双引号均可。
+data.push('xxx');  //向数组添加数据
+//实际项目里，数据来源于数据库服务器
+
+layui.laypage.render({  //layui框架之分页模块laypage
+    elem: 'nav'
+    ,limit:5  //每页记录数，默认值为10
+    , count: data.length
+    , jump: function (obj) {  //重新导航时
+        document.getElementById('city_list').innerHTML = function () {
+            //数组连接方法concat()；删除方法splice()
+            var arr = [], thisData = data.concat().splice((obj.curr-1) * obj.limit, obj.limit);
+            //alert(&quot;当前页：&quot;+obj.curr);
+            //alert(thisData); //当前页数据
+            layui.each(thisData, function (index, item) {  //遍历
+                arr.push('&lt;li&gt;' + item + '&lt;/li&gt;');  //添加项目列表项
+            });
+            return arr.join('');   //将数组中的数据元素用自定义的连接符(空串，也可以是空格字符串)转换为字符串，必须！
+        }();
+    }
+});
+&lt;/script&gt;
+</code></pre>
+
+<ul>
+<li>在分页界面里，使用项目列表显示当面页数据</li>
+<li>对分页导航div定义jump事件来实现交互</li>
+<li>每页记录数的默认值为10，可重新设置</li>
+<li>本例中的数据存放在js数组里，所以是客户端分页方式；实际项目里，数据来源于数据库服务器，属于服务器端分页</li>
+</ul>
+<p><strong>3. 百度富文本编辑器Baidu UI的使用</strong><br/></p>
+<p>从教学网站http://www.wustwzx.com本课程下载专区下载Baidu UE并带文件夹解压至wamp\www文件夹得到文件夹ueditor，访问其内的index.html，得到：</p>
+<p><img src="https://i.imgur.com/JjA1MYq.png" /></p>
+<p>在编辑区不同大小和颜色的文本、插入图片后，单击工具栏左上方的“HTML”工具得到对应的富文本代码。</p>
+<ul>
+<li>表单元素<code>&lt;textarea&gt;&lt;/textarea&gt;</code>只能接受纯文本输入</li>
+<li>Baidu UE帮助应用项目管理上传的图片</li>
+<li>在实际项目里，富文本保存在数据库表的某个字段里</li>
+</ul>
+<p><strong>4. Node.js、Express和Vue.js的使用初步</strong></p>
+<p><strong><em>4.1 Node.js开发环境搭建、访问MySQL数据库</em></strong></p>
+<p><img src="https://i.imgur.com/fq3WDNq.png" /></p>
+<ul>
+<li>预备工作：安装MySQL数据库服务器软件【由于WAMP也包含了MySQL服务器软件，它们的访问域名都是相同的，只是端口设置不同，先安装的默认占用3306端口，因此，后安装的修改后占用另一个端口，如3308】</li>
+<li>从教学网站本课程下载专区下载Node.js并安装</li>
+<li>新建一个空项目文件夹，并在VS Code中打开该文件夹</li>
+<li>按“Ctrl+Shift+Y”打开VS Code调试控制台，选择“终端”进入Windows命令行方式</li>
+<li>执行命令npm install mysql，对项目安装mysql模块</li>
+<li>编写脚本文件1.js，代码如上图</li>
+<li>再次进入Windows命令行方式，输入命令  node 1.js  执行js脚本 </li>
+</ul>
+<p><strong><em>4.2 http服务器的创建与访问</em></strong></p>
+<p>示例代码：</p>
+<pre><code>var http = require('http');  //加载http模块
+var mysql = require(&quot;mysql&quot;);  
+
+http.createServer(function(req, res){  //创建http服务器，req代表请求，res代表响应
+    res.writeHead(200, {'Content-Type': 'text/plain; charset=utf-8'});  //固定用法
+    //res.end(&quot;测试&quot;);
+    var connection = mysql.createConnection({  //创建数据库连接对象   
+        host     : 'localhost',       
+        user     : 'root',              
+        password : 'root',       
+        port: '3306',                   
+        database: 'memmana1', 
+        dateStrings: true
+    }); 
+    connection.connect();  //打开数据库连接
+    var  sql = 'SELECT * FROM user';
+    connection.query(sql,function (err, result) {  //执行查询并返回结果
+            if(err){
+                res.end(err.message);
+                return;
+            }
+            res.end(JSON.stringify(result));  //返回数据，从JS对象转化为JSon字符串
+    });
+    connection.end(); //关闭数据库连接
+}).listen(3000);  //3000为监听端口
+</code></pre>
+
+<ul>
+<li>在VS Code里进入命令行的另一种方法是：在项目文件夹空白处按住shift+右键，选择“在终端中打开”</li>
+<li>在项目的命令行方式下，执行node 2.js将创建一个Http服务器并运行</li>
+<li>在浏览器窗口请求  http://localhost:3000</li>
+<li>如果修改了源代码，则需要在终端窗口里按Ctrl+C停止http服务，然后重新创建</li>
+</ul>
+<p><strong><em>4.3 Web框架Express的使用</em></strong></p>
+<p>示例代码：</p>
+<pre><code>//Express包含了对http模块的再封装，是一个完整的Web框架
+// 执行 npm install express 安装express模块
+var express = require('express');  //加载express模块
+var app = express();
+
+app.get('/', function (req, res) {  //定义路由
+  res.send('Hello World!');
+});
+
+var server = app.listen(3000, function () {
+  var host = server.address().address;
+  var port = server.address().port;
+  console.log('Example app listening at http://%s:%s', host, port);
+});
+
+//访问 http://localhost:3000/前，在终端运行  node 3.js
+</code></pre>
+
+<ul>
+<li>Express参考文档： http://www.expressjs.com.cn/starter/hello-world.html</li>
+<li>使用Express创建Web应用比使用http模块更加快捷</li>
+</ul>
+<p><strong><em>4.4 测试MVVM框架Vue.js</em></strong></p>
+<p>访问http://www.wustwzx.com/webfront/TestVue，效果如下：</p>
+<p><img src="https://i.imgur.com/NgEewu4.png" /></p>
+<p>主页index.html代码如下：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;p v-text=&quot;message&quot;&gt;&lt;/p&gt;
+        &lt;p&gt;双向绑定：&lt;input v-model=&quot;message&quot;&gt;&lt;/p&gt;
+        &lt;button v-on:click=&quot;reverseMessage&quot;&gt;逆转消息&lt;/button&gt;
+        &lt;button v-on:click=&quot;getApi&quot;&gt;调用ajax接口改变message&lt;/button&gt;
+        &lt;p v-bind:title=&quot;title&quot;&gt;鼠标悬停几秒钟查看此处动态绑定的提示信息！&lt;/p&gt;
+        &lt;p v-if=&quot;seen&quot;&gt;现在你看到我了&lt;/p&gt;
+        &lt;ol&gt;
+            &lt;li v-for=&quot;todo in todos&quot; &gt;
+            {{todo.text}}
+            &lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;script src=&quot;https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/vue&quot;&gt;&lt;/script&gt;  &lt;!--加载Vue.js--&gt;
+&lt;script&gt;
+var app = new Vue({
+    el: '#app',
+    data: {
+        message: 'Hello Vue!',
+        title: '悬浮提示信息',
+        seen: true,
+        todos: [
+            { text: '学习 JavaScript' },
+            { text: '学习 Vue' },
+            { text: '整个牛项目' }
+        ]
+    },
+    methods: {
+        reverseMessage: function () {
+            this.message = this.message.split('').reverse().join('')
+        },
+        getApi:function() {
+            var $this = this
+            $.ajax({   //使用Ajax方法实现异步刷新
+                url:'api.php',
+                method:'get',
+                success:function(data){
+                    $this.message = data
+                },
+                error:function(err){
+                    $this.message = '调用接口失败'
+                }
+            })
+        }
+    }
+})
+&lt;/script&gt;
+</code></pre>
+
+<p>主页以Ajax方式请求的php页面api.php的代码如下：</p>
+<pre><code>&lt;?php
+    echo 'this is a string from api.php';
+?&gt;
+</code></pre>
+
+<ul>
+<li>Vue.js参考文档 ：https://cn.vuejs.org/v2/guide/index.html</li>
+<li>Vue.js表现为一个js脚本库，类似于jQuery</li>
+<li>Vue的核心库是关于视图层</li>
+<li>MVVM的核心是视图与模型的双向绑定</li>
+</ul>
+<h3>三、实验小结</h3>
+<ul>
+<li>以上框架均都是对原生JS用法的再封装</li>
+<li>使用Bootstrap框架能美化页面元素(如表格和表单等）、增加特效</li>
+<li>Layui框架提供了快显信息和表格分页等功能</li>
+<li>富文本编辑器是相对纯文本编辑而言的，Baidu UE提供了图片管理和富文本编辑功能</li>
+<li>整合使用Node.js、Express和Vue.js框架，能快速创建http服务器、访问MySQL数据库，快速搭建基于MVVM开发框架的Web开发环境</li>
+</ul>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

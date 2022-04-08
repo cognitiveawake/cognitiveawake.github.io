@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>《Web前端开发技术》实验1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h2>实验一：网站与网页及其开发环境</h2>
+<h3>一、实验目的</h3>
+<ol>
+<li>掌握B/S体系中的客户端浏览器及Web服务器端</li>
+<li>掌握动态网站的特点、静态网页与动态网页的区别</li>
+<li>掌握Web服务器WAMP的使用</li>
+<li>掌握VS Code等网页编辑器的使用</li>
+<li>掌握浏览器动态调试功能的使用</li>
+</ol>
+<h3>二、实验内容及步骤</h3>
+<h3>1. PHP动态网站开发环境搭建</h3>
+<p>访问http://www.wustwzx.com，进入PHP下载专区，可下载WAMP，如下图所示。
+<img src="https://i.imgur.com/TBbXco8.png" /></p>
+<ul>
+<li>该软件安装的默认路径是c:\wamp，不支持中文路径</li>
+<li>Win 8以上系统需要设置该应用程序的兼容性（如下图）才能打开</li>
+</ul>
+<p><img src="https://i.imgur.com/05WDKpx.png" /></p>
+<h4>2. 使用WAMP托盘，快速访问WAMP默认站点和用户站点</h4>
+<p>启动WAMP服务器后，任务栏上有托盘可供使用，通过它能进行快速操作，如图</p>
+<p><img src="https://i.imgur.com/RZIXV3x.png" /><img src="https://i.imgur.com/3RI2VS6.png" /></p>
+<ul>
+<li>默认站点目录：c:\wamp\www，从托盘可快速进入</li>
+<li>从托盘可快速访问访问默认站点，相当于在浏览器里输入：http://localhost</li>
+<li>用户站点目录对应于www文件夹下的一个子文件夹</li>
+</ul>
+<h3>3. 使用VS Code创建与管理用户站点文件夹、编辑站点文件</h3>
+<p><img src="https://i.imgur.com/7R7hdvC.png" /><br/></p>
+<ul>
+<li>使用VS Code的文件菜单，打开位于www里的某个已经存在的文件夹，即是创建一个站点</li>
+<li>
+<p>VS Code提供快速编辑网页的功能，详细使用请打开视频网址 https://pan.baidu.com/s/1o9Pj3Yi
+  <img src="https://i.imgur.com/IAgoXj8.png" /></p>
+</li>
+<li>
+<p>编辑新建的文件前，为了获得对相应的支持，需要先指定扩展名（如.htm）来保存文件</p>
+</li>
+</ul>
+<h3>4. 静态网页与动态网页测试</h3>
+<p>（1）使用VS Code编写一个简单的静态页面testStaticPage.html并保存至默认站点根目录（即www目录），其代码如下（可粘贴）：</p>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;关于静态网页&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;对静态网页的认识&lt;/h2&gt;&lt;hr/&gt;
+    &lt;h3&gt;1. 静态网页以.html作为扩展名。&lt;/h3&gt;
+    &lt;h3&gt;2. 浏览器端请求Web服务器端的静态页面时，服务器&lt;font color=&quot;red&quot;&gt;直接&lt;/font&gt;将静态页面里的代码和图片等文件传输到浏览器端。&lt;/h3&gt;
+    &lt;h3&gt;3. 浏览器解析服务器端返回的代码，呈现页面效果。&lt;/h3&gt;&lt;hr/&gt;
+    【&lt;a href=&quot;testDynamicPage.php&quot;&gt;跳转至动态测试页面testDynamicPage.php&lt;/a&gt;】
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>页面浏览效果如下：</p>
+<p><img src="https://i.imgur.com/qqhNip2.png" /></p>
+<p>（2）使用VS Code编写一个简单的动态页面testDynamicPage.phpl并保存至默认站点根目录（即www目录），其代码如下（可粘贴）：</p>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;关于动态网页&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;对动态网页的认识&lt;/h2&gt;&lt;hr/&gt;
+    &lt;h3&gt;1. 动态网页不以.html作为扩展名，其扩展名与网站类型相关。例如，PHP动态网页的扩展名为.php&lt;/h3&gt;
+    &lt;h3&gt;2. 动态页面&lt;font color=&quot;red&quot;&gt;包含有需要在Web服务器运行的脚本程序&lt;/font&gt;。&lt;/h3&gt;
+    &lt;h3&gt;3. 浏览器&lt;font color=&quot;red&quot;&gt;解析服务器端返回的代码、呈现页面效果&lt;/font&gt;。&lt;/h3&gt;&lt;hr/&gt;
+    【&lt;a href=&quot;testStaticPage.html&quot;&gt;跳转至静态测试页面testStaticPage.html&lt;/a&gt;】
+    &lt;?php
+        date_default_timezone_set(&quot;PRC&quot;);  //设置时区
+        echo &quot;北京时间：&quot;.date(&quot;Y-m-d H:i:s&quot;);
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>页面浏览效果如下：
+<img src="https://i.imgur.com/EtjhDp8.png" /></p>
+<h3>5. 浏览器及其调试模式、清除缓存操作</h3>
+<p>打开浏览器窗口后，按功能键F12将进入浏览器的调试模式，如下图：</p>
+<p><img src="https://i.imgur.com/GWEKhns.png" />
+<br/></p>
+<ul>
+<li>确保已经分别安装了360和Google浏览器</li>
+<li>在VS Code中打开项目memmana0（要求先将项目复制到目录c:\wamp\wwww下）</li>
+<li>启动 WAMP</li>
+<li>从WAMP托盘默认站点，进而访问站点memmana0</li>
+<li>打开浏览器窗口按功能键F12进入调试模式</li>
+<li>查看页面元素对应的HTML代码及应用的CSS样式</li>
+<li>查看主页加载的CSS样式文件和脚本文件</li>
+<li>清除浏览器缓存(360在工具菜单，Google使用设置)</li>
+</ul>
+<h3>三、实验小结</h3>
+<p>提示：</p>
+<ul>
+<li>为什么推荐使用WAMP托盘来操作WAMP？</li>
+<li>VS Code较传统的编辑器而言有哪些优点？</li>
+<li>将VS Code与传统使用的DW比较。</li>
+</ul>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
