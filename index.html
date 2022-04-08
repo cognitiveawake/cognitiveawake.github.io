@@ -4,56 +4,61 @@
 		<meta charset="utf-8">
 		<title></title>	
 		<style type="text/css">	
+		
+	/* 	取消所有属性的默认边框 */
 		*{
 			margin: 0;
 			padding: 0;
 		}
-		 .nav{   
+		
+		/*    最外层div */
+		 .nav{                     
 			    height: 190px;
 				width:1000px;
-			   background-image:url(../img/top.jpg) ;
-			    margin:0 auto;	
+			    background-image:url(../img/top.jpg) ;
+			    margin:0 auto;	 /* 盒子居中对齐 */
 			/* 	border: 5px red solid; */
-				position:relative;
+				position:relative;    
 			
 		}
-			
+		 .nav ul{
+			   height: 30px;
+		       top:160px;
+		       position: absolute;
+			/* border: #0000FF 10px solid; */
+	}	
+	
 	    .nav ul li{
+		/* 	position: relative; */
 		/* 	overflow: hidden; */
-			float:left;
-			list-style: none;
-			margin: 0 9.6px;
-		/* 	border: #0000FF 10px solid; */
+			float:left;         /* 让li浮动 ，横向显示*/
+			list-style: none;    /* 取消列表符号 */
+			margin: 0 9.6px;    /* 设置每个小li直接的外边框 */
+			/* border: #0000FF 10px solid; */
 		
-			
-		/* 	border: #0000FF 1px solid; */
 			}
 	
 	
 		.nav ul li ul{
-			
-			position: static;
-			visibility:hidden;
-			/* border: #0000FF 10px solid; */
+		    position: static;/* 父级ul是绝对定位,默认继承绝对定位,设置静态防止子代ul脱标 */
+			height: auto;
+			visibility:hidden;  /*  隐藏盒子 */
+		
 		}
-		.nav ul{
-			top:160px;
-			position: absolute;
-				/* border: #0000FF 10px solid; */
-		}
+	
 		
 			
 		.nav ul li a{  
-			display: block;
+			display: block; /* 把超链接改为块元素 很重要，必须改 */
 			/* padding: 0 1px; */
-		        text-decoration: none;
+		    text-decoration: none;    
 			height: 30px;
-		        width: 101px;
+		    width: 101px;
 			border-radius: 7px;
-			color:black;
 			font-size: 15px;
 			line-height: 30px;
 			text-align: center;
+			color: black;
 			/* border: #0000FF 2px solid;
 			 */
 		}	
@@ -72,10 +77,11 @@
 			/* padding: 0; */
 			height:32px;
 			border-bottom: #DBDBDB 1px dotted;
-                        background-color: #55585a;
-			/* background: rgb(0,0,0,0.4); */
+            background-color: #55585a;
+			   /* 背景透明度 */
+			/* background: rgb(0,0,0,0.4); */ 
 			color:#fff ;
-			font-size: 13px;
+			font-size: 14px;
 			line-height: 32px;
 			
 		}
@@ -88,16 +94,90 @@
 		}
 		.nav ul li:hover ul {
 	      visibility:visible;
+		  border: none;
     } 			
 		.nav ul li a:hover {
 		 color: white;
 		 background-color: #ff6700;
 			
 		}
+			
+		.father{
+			
+			margin:auto;
+			width: 1250px;
+		/* 	border: #FFD700 5px solid; */
+			overflow: hidden;
+		    	
+		}
+		
+		.left{
+		   border-left: cornflowerblue 3px dotted;
+		   margin-left:125px;
+		   float: left;
+		   height: 450px;  
+		}
+		
+		.right{
+			float:left;	
+			border-left: #CCCCCC 1px double;
+		}
+		
+		.last{
+			height:80px;	
+		}
+		
+		.father ul li{	
+			list-style: none;
+			line-height: 40px;
+			height:40px;	
+		/* 	border: red 1px solid; */	
+		}
+		
+		.father ul{
+			padding-left:20px;
+			padding-right:10px;
+		
+		/* 	border: red 5px solid;
+			 */
+		}
+		.father a{
+			border-bottom: cadetblue 2px dotted;
+			text-decoration: none;
+			color: darkorchid;
+		}
+		
+		.father p{
+			/* border: #000000 2px solid; */
+		   /* padding-left:50px; */
+			
+			text-align: center;
+			font-size: 30px;
+			font-family: "microsoft yahei";
+		}
+		.foot_div{
+			border-radius: 10px;
+			margin: auto;
+			width: 1000px;
+			background-color:coral;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			color: white;	
+		}
 		</style>				
 	</head>
 	
 	<body>
+		<!-- 
+		外层结构:
+		将外层ul(导航栏)放到div盒子中,图片将整个盒子铺满,
+		利用定位,将ul(导航栏)移动到div的下方,寻找合适位置;
+		
+		内层结构:
+		第一层无序列表(浮动)套第二层无序列表(不浮动,块元素);
+		第一层的<a></a>与第二次无序列表是并列关系 -->
+		
 		<div class="nav">
 	    
 			<ul>
@@ -118,7 +198,6 @@
 				      <ul>
 			 	     	<li><a href="#">PHP网站开发</a></li>
 				     	<li><a class="last" href="#">ThinkPHP框架</a></li>
-				     	
 				     </ul>	
 				</li>
 				<li><a href="#">Web信息检索</a></li>
@@ -128,13 +207,40 @@
 			     	<li><a href="#">计算机基础</a></li>
 			     	<li><a href="#">C语言</a></li>
 			     	<li><a href="#">数据结构</a></li>
-			     	<li><a class="last" href="#">计算机网络</li>
+			     	<li><a class="last" href="#">计算机网络</a></li>
 			     </ul>	
 				
 				</li>
 			</ul>
-			
 		</div>
+		
 			
+		<div class=father> <!-- 底盒子 -->
+			<div class=left >
+				<ul>
+					
+				<br>
+				<p><b>技术文档</b></p>
+				<br>
+				
+				<li><a href="sy1.html" target='test'>1.使用HBuilder和WAMP</a></li>
+				<li><a href="sy2.html" target='test'>2.使用HTML标签组织页面内容</a></li>
+				<li><a href="sy3.html" target='test'>3.使用CSS样式修饰页面元素</a></li>
+				<li><a href="sy4.html" target='test'>4.网页布局</a></li>
+				<li><a href="sy5.html" target='test'>5.使用客户端脚本实现页面的交互效果</a></li>
+				<li><a href="sy6.html" target='test'>6.HTML 5</a></li>
+				<li class="last"><a href="sy7.html" target='test'>7.其它常用Web前端框架（如响应式框架<br>BootStrap和模块化框架)
+				</ul>
+			</div>
+			
+			<div  class=right>
+			   <iframe  name='test' src="sy1.html" width="677px" height="450px" frameborder="0"></iframe>
+			</div>
+		</div>
+		<!-- 底部盒子 -->
+         <div class=foot_div>版权所有:石忠彪</div>
+		
+		
+		
 	</body>
 </html>
